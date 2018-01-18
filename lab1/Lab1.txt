@@ -1,2 +1,2 @@
-This is Lab1 from master.
+This is Lab1 to work for merging
 Line2 from new_branch1
