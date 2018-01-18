@@ -1,2 +1,2 @@
-This is Lab1.
+This is Lab1 from new_branch2.
 Line2 from new_branch1
