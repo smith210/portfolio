@@ -4,10 +4,23 @@
 //File : SortingPack.java
 
 public class SortingPack {
+//insertionSort method
+  public static int[] insertionSort(int[] unsortedArr){
+
+  }
+
+//quickSort method
+  public static int[] quickSort(int[] unsortedArr){
+
+  }
+
+//mergeSort method
+  public static int[] mergeSort(int[] unsortedArr){
+    
+  }
 
 //main method
   public static void main (String[]args){
-
 
   }
 
