@@ -7,26 +7,31 @@ _File : README.md_
  
 ### **_SortingPack.java_**
  **METHODS**
-  * insertionSort(int[ ] unsortedArr)  
+  * int [ ] insertionSort(int[ ] unsortedArr)  
    
   * quickSort(int[ ] unsortedArr, int head, int tail)  
    
-  * quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
+  * int quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
    
-  * mergeSort(int[ ] unsortedArr)  
+  * int [ ] mergeSort(int[ ] unsortedArr)  
    
    
  ### **_SortingTest.java_**
  **METHODS**
-  * randomArray(int num)  
+  * int [ ] randomArray(int num)  
    
   * printArr(int[ ] array, int cur)  
    
-  * display(int sortMethod)  
+  * String display(int sortMethod)  
+  
+     Method takes an arguement of an integer, and returns type string. Based on what integer is passed through this method, _display_ will return one of the following Strings:
+     * If the integer is **0**, it returns string **insertionSort**.  
+     * If the integer is **1**, it returns string **quickSort**.
+     * All other integers will return **mergeSort**.
    
   * main  
    
-    This is where the function runs primarily in this file. From here, it goes through a for loop 3 times, one for each sort type.  
+    This is where the function starts (and runs primarily). From here, it goes through a for loop 3 times, one for each sort type.  
    It prints out a statement that lets the user know which sort it's testing and what the array being tested is. For example:
     >Testing for insertionSort...  
     >The generated array for this test is: [376, 853, 660]  
