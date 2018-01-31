@@ -27,7 +27,7 @@ _File : README.md_
   * main  
    
     This is where the function runs primarily in this file. From here, it goes through a for loop 3 times, one for each sort type.  
-   It prints out a statement that lets the user know which sort it's testing and what the array tested is. For example:
+   It prints out a statement that lets the user know which sort it's testing and what the array being tested is. For example:
     >Testing for insertionSort...  
     >The generated array for this test is: [376, 853, 660]  
    
