@@ -28,23 +28,29 @@ public class SortingPack {
     return unsortedArr;
   }
   
- //quickSort method  
-  public static void quickSort(int[] unsortedArr, int head, int tail){
+  //quickSort method  
+  public static int[] quickSort(int[] unsortedArr){
+      quickSortHelp(unsortedArr, 0, unsortedArr.length-1);
+      return unsortedArr;
+  }
+
+ //quickSortHelp method  
+  public static void quickSortHelp(int[] unsortedArr, int head, int tail){
       
       //use helper method to access pivot point
-      int pivotPtr = quickSortHelp(unsortedArr, head, tail);
+      int pivotPtr = partition(unsortedArr, head, tail);
       
       //recursive call to concatenate sorted numbers in future iterations
       if(head < pivotPtr -1){
-         quickSort(unsortedArr, head, pivotPtr);
+         quickSortHelp(unsortedArr, head, pivotPtr);
       }
       if(tail > pivotPtr){
-         quickSort(unsortedArr, pivotPtr+1, tail);      
+         quickSortHelp(unsortedArr, pivotPtr+1, tail);      
       }
   }
 
-//quickSortHelp method
-  public static int quickSortHelp(int[] unsortedArr, int head, int tail){
+//partition method
+  public static int partition(int[] unsortedArr, int head, int tail){
 
       //set value of pivotPoint
       int pivotPtr = head;
