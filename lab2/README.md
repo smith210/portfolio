@@ -1,6 +1,14 @@
-__Name: Martin Smith__  
-__CSCI 241 - Winter 2018__  
-__Date : January 30th 2018__  
-__File : README.md__
+_Name: Martin Smith_  
+_CSCI 241 - Winter 2018_  
+_Date : January 30th 2018_  
+_File : README.md_
 
-###MANUAL FOR LAB2
+### MANUAL FOR LAB2
+ 
+ 
+ **_SortingTest.java_**
+ * METHODS
+  * randomArray(int num)  
+  * printArr(int[] array, int cur)
+  * display(int sortMethod)
+  * main
