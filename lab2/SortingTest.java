@@ -84,7 +84,7 @@ public class SortingTest {
             arr = SortingPack.insertionSort(arr);
             
          } else if (sortMethod == 1){
-            SortingPack.quickSort(arr, 0, arr.length-1);
+            arr = SortingPack.quickSort(arr);
             
          } else {
             arr = SortingPack.mergeSort(arr);
