@@ -12,6 +12,7 @@ _File : README.md_
       Method takes arguement of type int [ ], an returns type int [ ]. It will then save the value of one of the integers (not the head) from **unsortedArr** into variable **lockPick**, and compare the value of that specified integer with the values before it. 
       *  If the integer before **lockPick** is bigger, then it inserts itself one index higher into **unsortedArr**. This repeats until an integer is smaller than **lockPick** or if no more integers can be parsed in **unsortedArr**.
       *  If the integer before **lockPick** is smaller or there is no more array to be parsed, **lockPick** is then reinserted into **unsortedArr** one index higher. 
+      
       This process repeats until all integers in **unsortedArr** have been parsed, which then it will return the sorted array.
    
   * quickSort(int[ ] unsortedArr, int head, int tail)  
