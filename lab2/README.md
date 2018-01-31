@@ -33,7 +33,7 @@ _File : README.md_
         
   * String display(int sortMethod)  
   
-     Method takes an arguement of type integer, and returns type string. Based on what integer is passed through this method, **display** will return one of the following Strings:
+     Method takes an arguement of type integer, and returns type String. Based on what integer is passed through this method, **display** will return one of the following Strings:
      * If the integer is **0**, it returns string **insertionSort**.  
      * If the integer is **1**, it returns string **quickSort**.
      * All other integers will return **mergeSort**.
