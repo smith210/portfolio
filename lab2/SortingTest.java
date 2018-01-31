@@ -7,7 +7,7 @@ import java.util.*;
 
 public class SortingTest {
 
-   public static final int SIZE_ARRAY = 3;
+   public static final int SIZE_ARRAY = 5;
 
 //randomArray method
 //What it does: returns random unsorted integer array
