@@ -19,6 +19,8 @@ _File : README.md_
  ### **_SortingTest.java_**
  **METHODS**
   * int [ ] randomArray(int num)  
+     
+     Method takes argument of type int and returns type int [ ]. Based on **int num**, it will then generate an array of that size, filling it with random numbers used by the **Math.random()** function. 
    
   * printArr(int[ ] array, int cur)  
   
