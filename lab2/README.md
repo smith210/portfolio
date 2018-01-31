@@ -8,7 +8,7 @@ _File : README.md_
  
  **_SortingTest.java_**
  * METHODS
-  * randomArray(int num)  
-  * printArr(int[] array, int cur)
-  * display(int sortMethod)
-  * main
+   * randomArray(int num)  
+   * printArr(int[] array, int cur)
+   * display(int sortMethod)
+   * main
