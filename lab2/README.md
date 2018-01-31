@@ -31,9 +31,9 @@ _File : README.md_
     >Testing for insertionSort...  
     >The generated array for this test is: [376, 853, 660]  
    
-   Based on which iteration the for loop is on, the time the function starts is recorded, and the function will then call on one of the methods from the SortingPack class, starting with **insertSort**, followed by **quickSort** and **mergeSort**. Once the sort is completed, the time of completion will be recorded. Total time is then calculated, and that is then shown to the user, along with the sorted array:  
-   >Time it took to sort array: 1 milliseconds.  
-   >The sorted array for ths test is: [376, 660, 853]  
+    Based on which iteration the for loop is on, the time the function starts is recorded, and the function will then call on one of the methods from the SortingPack class, starting with **insertSort**, followed by **quickSort** and **mergeSort**. Once the sort is completed, the time of completion will be recorded. Total time is then calculated, and that is then shown to the user, along with the sorted array:  
+    >Time it took to sort array: 1 milliseconds.  
+    >The sorted array for ths test is: [376, 660, 853]  
    
-   It'll then print a statement letting the user know that the sort is officially over, and the cycle will continue for the following sorts.  
-   >Testing for insertionSort finished.
+    It'll then print a statement letting the user know that the sort is officially over, and the cycle will continue for the following sorts.  
+    >Testing for insertionSort finished.
