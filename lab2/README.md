@@ -5,26 +5,26 @@ _File : README.md_
 
 ### MANUAL FOR LAB2
  
- **_SortingPack.java_**
- * METHODS
-   * insertionSort(int[ ] unsortedArr)  
+##### **_SortingPack.java_**
+ **METHODS**
+  * insertionSort(int[ ] unsortedArr)  
    
-   * quickSort(int[ ] unsortedArr, int head, int tail)  
+  * quickSort(int[ ] unsortedArr, int head, int tail)  
    
-   * quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
+  * quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
    
-   * mergeSort(int[ ] unsortedArr)  
+  * mergeSort(int[ ] unsortedArr)  
    
    
- **_SortingTest.java_**
- * METHODS
-   * randomArray(int num)  
+ ##### **_SortingTest.java_**
+ **METHODS**
+  * randomArray(int num)  
    
-   * printArr(int[ ] array, int cur)  
+  * printArr(int[ ] array, int cur)  
    
-   * display(int sortMethod)  
+  * display(int sortMethod)  
    
-   * main  
+  * main  
    
     This is where the function runs primarily in this file. From here, it goes through a for loop 3 times, one for each sort type.  
    It prints out a statement that lets the user know which sort it's testing and what the array tested is. For example:
@@ -35,5 +35,5 @@ _File : README.md_
    >Time it took to sort array: 1 milliseconds.  
    >The sorted array for ths test is: [376, 660, 853]
    
-   It'll then print a statement letting the user know that the sort is officially over, and the cycle will continue for the following sort.
+   It'll then print a statement letting the user know that the sort is officially over, and the cycle will continue for the following sorts.
    >Testing for insertionSort finished.
