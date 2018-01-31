@@ -9,24 +9,30 @@ _File : README.md_
  **METHODS**
   * int [ ] insertionSort(int[ ] unsortedArr)  
    
-      Method takes arguement of type int [ ], an returns type int [ ]. It will then save the value of one of the integers (not the head) from **unsortedArr** into variable **lockPick**, and compare the value of that specified integer with the values before it. 
+      Method takes arguement of type int [ ], and returns type int [ ]. It will save the value of one of the integers (not the head) from **unsortedArr** into variable **lockPick**, and compare the value of that specified integer with the values before it. 
       *  If the integer before **lockPick** is bigger, then it inserts itself one index higher into **unsortedArr**. This repeats until an integer is smaller than **lockPick** or if no more integers can be parsed in **unsortedArr**.
       *  If the integer before **lockPick** is smaller or there is no more array to be parsed, **lockPick** is then reinserted into **unsortedArr** one index higher. 
       
-      This process repeats until all integers in **unsortedArr** have been parsed, which then it will return the sorted array.
+      This process repeats until all integers in **unsortedArr** have been parsed into **lockPick** (with exception of the head), which then it will return the sorted array.
    
   * quickSort(int[ ] unsortedArr, int head, int tail)  
    
   * int quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
    
   * int [ ] mergeSort(int[ ] unsortedArr)  
+  
+      Method takes arguement of type int [ ] and returns type int [ ]. It first makes sure that the length of the array is greater than one. Once done, **unsortedArr** is split into two halves, left half **leftArray** and right half **rightArray**. 
+      
+      Each half is then called recursively into mergeSort, which will continue to split the arrays until it can't be split no more. This will ensure that the sort happens within all divided arrays.  
+      
+      The two arrays 
    
    
  ### **_SortingTest.java_**
  **METHODS**
   * int [ ] randomArray(int num)  
      
-     Method takes argument of type int and returns type int [ ]. Based on **int num**, it will then generate an array of that size, filling it with random numbers used by the **Math.random()** function. 
+     Method takes arguement of type int and returns type int [ ]. Based on **int num**, it will then generate an array of that size, filling it with random numbers used by the **Math.random()** function. 
    
   * printArr(int[ ] array, int cur)  
   
