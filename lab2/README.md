@@ -22,7 +22,7 @@ _File : README.md_
    
   * printArr(int[ ] array, int cur)  
   
-     Method takes arguements of type int [] and type int. It then prints what is in _int [ ] array, seperating each integer (with exception of the last) with a comma_:
+     Method takes arguements of type int [] and type int. It then prints what is in _int [ ] array_, seperating each integer (with exception of the last) with a comma:
      >**398, 714, 103, 220, 993, 370, 409, 791, 860,** 616  
      
      _int cur_ is used so that _int [ ] array_ does not print a comma on the last integer in _int [ ] array_.  
