@@ -19,9 +19,7 @@ _File : README.md_
   
   * quickSortHelp(int [ ] unsortedArr, int head, int tail)
   
-  * partition(int [ ] unsortedArr, int head, int tail)
-   
-  * int quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
+  * partition(int [ ] unsortedArr, int head, int tail)  
    
   * int [ ] mergeSort(int[ ] unsortedArr)  
   
@@ -29,7 +27,10 @@ _File : README.md_
       
       Each half is then called recursively into mergeSort, which will continue to split the arrays until it can't be split no more. This will ensure that the sort happens within all divided arrays.  
       
-      The two arrays 
+      The two arrays and **unsortedArr** will then have pointers starting at the head of each, comparing the integer values the pointers are on.
+      * If the value in **leftArray** at pointer **i** is less than **rightArray** at pointer **j**, have the value of **unsortedArr** at given pointer **k** eqaul that value in **leftArray**. Then pointers **k** and **i** increment.
+      * If the value in **rightArray** at pointer **j** is less than **leftArray** at pointer **i**, have the value of **unsortedArr** at given pointer **k** equal that value in **rightArray**. Then pointers **j** and **k** increment.
+      * Any leftover values in **leftArray** and **rightArray** are then concatenated into **unsortedArr** if there is room left, starting with **leftArray**.
    
    
  ### **_SortingTest.java_**
