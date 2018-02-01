@@ -5,8 +5,8 @@ _File : README.md_
 
 # MANUAL FOR LAB2
  
-### **_SortingPack.java_**
- **METHODS**
+### __**_SortingPack.java_**__
+#### **METHODS**
   * int [ ] insertionSort(int[ ] unsortedArr)  
    
       Method takes arguement of type int [ ], and returns type int [ ]. It will save the value of one of the integers (not the head) from **unsortedArr** into variable **lockPick**, and compare the value of that specified integer with the values before it. 
@@ -54,8 +54,8 @@ _File : README.md_
       The sorted array is then returned.
    
    
- ### **_SortingTest.java_**
- **METHODS**
+ ### __**_SortingTest.java_**__
+ #### **METHODS**
   * int [ ] randomArray(int num)  
      
      Method takes arguement of type int and returns type int [ ]. Based on **int num**, it will then generate an array of that size, filling it with random numbers used by the **Math.random()** function. 
