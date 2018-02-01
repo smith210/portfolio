@@ -31,6 +31,8 @@ _File : README.md_
       * If the value in **leftArray** at pointer **i** is less than **rightArray** at pointer **j**, have the value of **unsortedArr** at given pointer **k** eqaul that value in **leftArray**. Then pointers **k** and **i** increment.
       * If the value in **rightArray** at pointer **j** is less than **leftArray** at pointer **i**, have the value of **unsortedArr** at given pointer **k** equal that value in **rightArray**. Then pointers **j** and **k** increment.
       * Any leftover values in **leftArray** and **rightArray** are then concatenated into **unsortedArr** if there is room left, starting with **leftArray**.
+      
+      The sorted array is then returned.
    
    
  ### **_SortingTest.java_**
