@@ -33,9 +33,9 @@ _File : README.md_
       
       Method take arguements of type int [ ] and int, returning type int. The method starts by setting up the int values of **pivotPtr** and **pivotValue**, which will be based off your **head** arguement. This will be your pivot index and pivot value in respective order, which will shape with what the rest of the method does. The int values of **lPtr** and **rPtr** are then set up, **lPtr** being one index above **pivotPtr**, and **rPtr** residing at the **tail** index of **unsortedArr**. 
       
-      Both **lPtr** and **rPtr** move torwards each other (**lPtr** increases, **rPtr** decreases), until one of the following happens:
-        *  If **unsortedArr[lPtr]** ends up being bigger or equal to **pivotValue** or if **lPtr** ends up at the value of **tail**, **lPtr** stops moving.
-        *  If **unsortedArr[rPtr]** ends up being smaller or equal to **pivotValue** or if **rPtr** is the same value as **pivotPtr**, **rPtr** stops moving.
+      Both **lPtr** and **rPtr** move torwards each other (**lPtr** increases, **rPtr** decreases), until one of the following happens:  
+         *  If **unsortedArr[lPtr]** ends up being bigger or equal to **pivotValue** or if **lPtr** ends up at the value of **tail**, **lPtr** stops moving.
+         *  If **unsortedArr[rPtr]** ends up being smaller or equal to **pivotValue** or if **rPtr** is the same value as **pivotPtr**, **rPtr** stops moving.
         
        Once both pointers have stopped moving, the values in **unsortedArr** that each pointer is pointing at is compared. If **rPtr** is still on the right side of **lPtr** or if neither pointer has landed on the assigned boundaries of **unsortedArr**, both values at the pointers will swap with each other, and **lPtr** and **rPtr** will continue to move torwards each other as described above. 
        If **rPtr** ends up being on the left side of **rPtr** or if a boundary in **unsortedArr** has been reached, the value that **rPtr** is pointing at swaps with **pivotValue**. 
