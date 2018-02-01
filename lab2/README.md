@@ -37,8 +37,10 @@ _File : README.md_
         *  If **unsortedArr[lPtr]** ends up being bigger or equal to **pivotValue** or if **lPtr** ends up at the value of **tail**, **lPtr** stops moving.
         *  If **unsortedArr[rPtr]** ends up being smaller or equal to **pivotValue** or if **rPtr** is the same value as **pivotPtr**, **rPtr** stops moving.
         
-       Once both pointers have stopped moving, the values in **unsortedArr** that each pointer is pointing at is compared. If **rPtr** is still on the right side of **lPtr** or if neither pointer has landed on the edge or **pivotPtr** of **unsortedArr**, both values at the pointers will swap with each other, and **lPtr** and **rPtr** start moving torwards each other like described above. 
-       If **rPtr** ends up being on the left side of **rPtr** or if a boundary in **unsortedArr** has been reached, the value that **rPtr** is pointing at swaps with the **pivotValue**. The value of **rPtr** is then returned.
+       Once both pointers have stopped moving, the values in **unsortedArr** that each pointer is pointing at is compared. If **rPtr** is still on the right side of **lPtr** or if neither pointer has landed on the assigned boundaries of **unsortedArr**, both values at the pointers will swap with each other, and **lPtr** and **rPtr** will continue to move torwards each other as described above. 
+       If **rPtr** ends up being on the left side of **rPtr** or if a boundary in **unsortedArr** has been reached, the value that **rPtr** is pointing at swaps with **pivotValue**. 
+       
+       The value of **rPtr** is then returned.
    
   * int [ ] mergeSort(int[ ] unsortedArr)  
   
