@@ -31,9 +31,9 @@ _File : README.md_
   
   * int partition(int [ ] unsortedArr, int head, int tail)  
       
-      Method take arguements of type int [ ] and int, returning type int. The method starts by setting up the int values of **pivotPtr** and **pivotValue**, which will be based off your **head** arguement. This will be your pivot index and pivot value in respective order, which will shape with what the rest of the method does.
+      Method take arguements of type int [ ] and int, returning type int. The method starts by setting up the int values of **pivotPtr** and **pivotValue**, which will be based off your **head** arguement. This will be your pivot index and pivot value in respective order, which will shape with what the rest of the method does. The int values of **lPtr** and **rPtr** are then set up, **lPtr** being one index above **pivotPtr**, and **rPtr** residing at the **tail** index of **unsortedArr**. 
       
-      The int values of **lPtr** and **rPtr** are then set up, **lPtr** being one index above **pivotPtr**, and **rPtr** residing at the **tail** index of **unsortedArr**. Both **lPtr** and **rPtr** move torwards each other (**lPtr** increases, **rPtr** decreases), until one of the following happens:
+      Both **lPtr** and **rPtr** move torwards each other (**lPtr** increases, **rPtr** decreases), until one of the following happens:
         *  If **unsortedArr[lPtr]** ends up being bigger or equal to **pivotValue** or if **lPtr** ends up at the value of **tail**, **lPtr** stops moving.
         *  If **unsortedArr[rPtr]** ends up being smaller or equal to **pivotValue** or if **rPtr** is the same value as **pivotPtr**, **rPtr** stops moving.
         
