@@ -17,6 +17,8 @@ _File : README.md_
    
   * int [ ] quickSort(int[ ] unsortedArr)  
   
+      Method takes arguement of type int[ ], and returns type int [ ]. **unsortedArr** is passed through void method **quickSortHelp** along with pointers pointing at the head and tail of the array. Once it's passed **quickSortHelp**, **unsortedArr** will be sorted, and that array will then be returned.
+  
   * quickSortHelp(int [ ] unsortedArr, int head, int tail)
   
   * partition(int [ ] unsortedArr, int head, int tail)  
