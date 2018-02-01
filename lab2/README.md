@@ -19,7 +19,15 @@ _File : README.md_
   
       Method takes arguement of type int[ ], and returns type int [ ]. **unsortedArr** is passed through void method **quickSortHelp** along with pointers pointing at the head and tail of the array. Once it's passed **quickSortHelp**, **unsortedArr** will be sorted, and that array will then be returned.
   
-  * quickSortHelp(int [ ] unsortedArr, int head, int tail)
+  * quickSortHelp(int [ ] unsortedArr, int head, int tail)  
+  
+      Method takes arguements of type int[ ] and type int. All three arguements(**unsortedArr**, **head**, **tail**) are then passed through method **partition**, which will be used to sort and identify integer **pivotPtr**, which is the index of a pivot point within array **unsortedArr**. 
+      
+      Making sure that **head** and **tail** don't lie out of the boundaries of **pivotPtr**, **quickSortHelp** is called again recursively.
+      *  For the left half of the array, the **head** pointer remains the same, but the **tail** pointer will now point at **pivotPtr**.
+      *  For the right half of the array, the **tail** pointer remains the same, but the **head** pointer will now point at one value above **pivotPtr**.
+      
+      The method doesn't return any value, but its purpose is to change the values in **unsortedArr** so that when the **quickSortHelp** call in **quickSort** has finished, all the integers in **unsortedArr** will now be sorted. 
   
   * partition(int [ ] unsortedArr, int head, int tail)  
    
