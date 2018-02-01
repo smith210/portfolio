@@ -15,7 +15,11 @@ _File : README.md_
       
       This process repeats until all integers in **unsortedArr** have been parsed into **lockPick** (with exception of the head), which then it will return the sorted array.
    
-  * quickSort(int[ ] unsortedArr, int head, int tail)  
+  * int [ ] quickSort(int[ ] unsortedArr)  
+  
+  * quickSortHelp(int [ ] unsortedArr, int head, int tail)
+  
+  * partition(int [ ] unsortedArr, int head, int tail)
    
   * int quickSortHelp(int[ ] unsorttedArr, int head, int tail)  
    
