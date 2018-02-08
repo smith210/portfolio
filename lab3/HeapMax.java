@@ -25,19 +25,24 @@ public class HeapMax{
    //insert(int element):
    //adds element to the heap, and sorts it accordingly
    public void insert(int element){
+      //insert element at the end of the heap
       data.add(element);
+      //set i equal to the value where element is
+      //pointing at in heap
       int i = data.size()-1;  
 
-
+      //check if i is on a lower level. If so, loop until
+      //i is on first level.
       while ((i-1)%2 >= 0){
- 
+         //compare the values of parent and child. If
+         //child is bigger than parent, swap values.
          if (data.get(i) > data.get((i-1)/2)){
 
             data.set(i, data.get((i-1)/2));
             
             data.set((i-1)/2, element);
          }
-         
+         //set a new value of i
          i = ((i-1)/2);
       }
    }
@@ -45,17 +50,31 @@ public class HeapMax{
    //getMax():
    //returns the biggest value in the heap
    public int getMax(){
-      return data.get(0);
-   
+      //if there's nothing in heap, return -1.
+      if(data.size() == 0){
+         return -1;
+      }else{
+         return data.get(0);
+      }
    }
    
    //removeMax():
    //removes the max value, and returns a new max value
    public int removeMax(){
+      //if trying to remove last heap in data, only remove.
+      //return -1.
+      if(data.size() == 1){
+         data.remove(data.size()-1);
+         return -1;
+      }else{
       removeMaxHelper();
       return data.get(0);
+      }
    }
    
+   //removeMaxHelper():
+   //replaces max value with the lowest number in heap,
+   //and removes the lowest number in the heap.
    public void removeMaxHelper(){
       int value = data.get(data.size()-1);
       data.remove(data.size()-1);
@@ -68,13 +87,20 @@ public class HeapMax{
    //is bigger than the parent, switch values in the tree.
    //Do this until parent is bigger than eldest child.
    public void heapify(int num){
+      
+      //loop through the heap until there are no more children
       while ((2*num)+1 < data.size()){
+         //find the biggest child
          int maxChildIndex = maxChild(num);
+         
+         //compare values of parent and child. If child is bigger
+         //than parent, swap the two values.
          if (data.get(num) < data.get(maxChildIndex)){
             int temp = data.get(maxChildIndex);
             data.set(maxChildIndex, data.get(num));
             data.set(num, temp);
          }
+         //start the next while loop at the child
          num = maxChildIndex;
       }
    }
@@ -105,18 +131,30 @@ public class HeapMax{
    //Displays the heap, and seperates the levels with commas and numbers with spaces.
    //Ends the heap with a period.
    public void display(){
+
+      //if the data.size() is 0 or null, print error statement
+      if (data.size() == 0){
+         System.out.print("ERROR - NO ELEMENTS IN HEAP");
+      }
+
       //accumulator value to determine where levels end
       int acc = 1;
       
+      //loop through the heap
       for(int i = 0; i < data.size(); i++){
+         
+         //base case: if the number is the last in heap, print
+         //out only the number
          if(i+1 == data.size()){
             System.out.print(data.get(i));
          }else{
-         
+
             if (data.size() > 1){
+               //print out the number being pointed at in heap
                System.out.print(data.get(i));
             
-
+               //if at the end of a level, print a comma then a space.
+               //else, print only a space.
                if (i+2 == (int)Math.pow(2,acc)){
                   System.out.print(", ");
                   acc = acc+1;
@@ -125,8 +163,7 @@ public class HeapMax{
                }     
             }
          }
-         //System.out.println(acc);
-         //System.out.println(i);
+
       }
       System.out.println(".");
    }
