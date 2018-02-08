@@ -24,12 +24,7 @@ public class HeapMax{
    
    public void insert(int element){
       data.add(element);
-      int i = data.size()-1;
-       
-      System.out.print(i/2); 
-      System.out.print(" " + (i-1));
-      System.out.print(" " + ((i-1)/2));
-      System.out.println("");    
+      int i = data.size()-1;  
       
       if((i-1)/2 == 0){
          if (data.get(i) > data.get((i-1)/2)){
@@ -115,4 +110,3 @@ public class HeapMax{
       System.out.print(".");
    }
 }
-
