@@ -64,11 +64,16 @@ public class HeapMaxApp{
    //main method
    public static void main(String[]args){
       //make sure there's an arguement on the command line and it's an int.
-      try{
-         SIZE = Integer.parseInt(args[0]);
-      } catch (NumberFormatException e) {
-         System.err.println("Arguement " + args[0] + " must be an integer.");
+      if(args.length == 0){
+         System.err.println("An arguement of type int must be specified.");
          System.exit(1);
+      }else{
+         try{
+            SIZE = Integer.parseInt(args[0]);
+         } catch (NumberFormatException e) {
+            System.err.println("Arguement " + args[0] + " must be an integer.");
+            System.exit(1);
+         }
       }
       //make sure that the matrix is in bounds of an array.
       if(SIZE >=0){
