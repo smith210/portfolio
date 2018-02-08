@@ -24,15 +24,32 @@ public class HeapMax{
    
    public void insert(int element){
       data.add(element);
-      int i = data.size();
+      int i = data.size()-1;
+       
+      System.out.print(i/2); 
+      System.out.print(" " + (i-1));
+      System.out.print(" " + ((i-1)/2));
+      System.out.println("");    
+      
+      if((i-1)/2 == 0){
+         if (data.get(i) > data.get((i-1)/2)){
+
+            data.set(i, data.get((i-1)/2));
+            
+            data.set((i-1)/2, element);
+         }
+      }
       
       while ((i-1)/2 > 0){
+         
+         
          if (data.get(i) > data.get((i-1)/2)){
-            int tmp = data.get(i);
-            data.add(i, data.get((i-1)/2));
-            data.add((i-1)/2, tmp);
+
+            data.set(i, data.get((i-1)/2));
+            
+            data.set((i-1)/2, element);
          }
-         i = (i-1)/2;
+         i = ((i-1)/2);
       }
    }
    
@@ -49,17 +66,17 @@ public class HeapMax{
    public void removeMaxHelper(){
       int value = data.get(data.size()-1);
       data.remove(data.size()-1);
-      data.add(0, value);
+      data.set(0, value);
       heapify(0);
    }
    
    public void heapify(int num){
-      while ((2*num)+1 <= data.size()){
+      while ((2*num)+1 < data.size()){
          int maxChildIndex = maxChild(num);
          if (data.get(num) < data.get(maxChildIndex)){
             int temp = data.get(maxChildIndex);
-            data.add(maxChildIndex, data.get(num));
-            data.add(num, temp);
+            data.set(maxChildIndex, data.get(num));
+            data.set(num, temp);
          }
          num = maxChildIndex;
       }
@@ -69,6 +86,10 @@ public class HeapMax{
       int cl = 2*num + 1;
       int cr = 2*num + 2;
       
+      if(data.size() <= cr){
+         return cl;
+      }
+      
       if (data.get(cl) > data.get(cr)){
          return cl;
       }else{
@@ -77,11 +98,21 @@ public class HeapMax{
    }
    
    public void display(){
-      for(int i = 0; i > data.size(); i++){
-         System.out.print(data.get(i));
-         if (i%(i-1)/2) == 0){
-            System.out.println("");
-         }      
+      for(int i = 0; i < data.size(); i++){
+         if(i+1 == data.size()){
+            System.out.print(data.get(i));
+         }else{
+         
+            if (data.size() > 1){
+               System.out.print(data.get(i)+ " ");
+            
+               if (Math.sqrt(i+2)% 2 == 0 || i == 0){
+                  System.out.print(", ");
+               }      
+            }
+         }
       }
+      System.out.print(".");
    }
 }
+
