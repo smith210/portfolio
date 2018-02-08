@@ -8,7 +8,7 @@ import java.util.*;
 
 public class HeapMaxApp{
    //declare the size of matrix
-   public static final int SIZE = 25;
+   public static final int SIZE = 15;
    
    public static final HeapMax newHeap = new HeapMax(SIZE);
    
@@ -23,6 +23,7 @@ public class HeapMaxApp{
    public static void displayStartStatement(int[][]matr){
       System.out.println("Testing of kthBiggest starts.");
       System.out.println("The given matrix is: ");
+      System.out.println("");
       
       for (int i = 0; i < SIZE; i++){
          for (int j = 0; j < SIZE; j++){
@@ -35,11 +36,12 @@ public class HeapMaxApp{
          System.out.println("");
          
       }
+      System.out.println("");
    }
    
    public static void displayEndStatement(int set, int max){
       set = set+1;
-      System.out.println("The biggest element of experiment " + set + " is " + max + ".");
+      System.out.println("The biggest element of Experiment " + set + " is " + max + ".");
       System.out.println("Testing of kthBiggest ends.");
    }
    
