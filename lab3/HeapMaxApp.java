@@ -23,9 +23,8 @@ public class HeapMaxApp{
       return newHeap.getMax();
    }
    
-   public static void displayStartStatement(int[][]matr){
-      System.out.println("Testing of kthBiggest starts.");
-      System.out.println("The given matrix is: ");
+   public static void displayStartStatement(int[][]matr, int testNum){
+      System.out.println("The given matrix for Test " + (testNum+1) + " is: ");
       //print out matrix based on SIZE
       if(SIZE > 0){   
          System.out.println("");
@@ -57,8 +56,8 @@ public class HeapMaxApp{
       }else{
          set = set+1;
          System.out.println("The biggest element of Experiment " + set + " is " + max + ".");
+         System.out.println("");
       }
-      System.out.println("Testing of kthBiggest ends.");
    }
    
    //main method
@@ -75,28 +74,37 @@ public class HeapMaxApp{
             System.exit(1);
          }
       }
+      
       //make sure that the matrix is in bounds of an array.
       if(SIZE >=0){
-         //create blank template of an array
-         int [][] coolMatrix = new int[SIZE][SIZE];
-         //for loop to fill in matricies with random numbers
-         for (int i = 0; i < SIZE; i++){
-            for (int j = 0; j < SIZE; j++){
-               coolMatrix[i][j] = (int)(Math.random()*100);
+         //print starting statement.
+         System.out.println("Testing of kthBiggest starts.");
+         
+         //required: two test cases   
+         for(int test = 0; test < 2; test++){   
+            //create blank template of an array
+            int [][] coolMatrix = new int[SIZE][SIZE];
+            //for loop to fill in matricies with random numbers
+            for (int i = 0; i < SIZE; i++){
+               for (int j = 0; j < SIZE; j++){
+                  coolMatrix[i][j] = (int)(Math.random()*100);
+               }
             }
+            
+            //set a random number to pick which set is to be sorted through
+            int randomSet = (int)(Math.random()*SIZE);
+            
+            //print start statement
+            displayStartStatement(coolMatrix, test);
+            
+            //find the biggest value of the set in the matrix
+            int breadwinner = kthBiggest(coolMatrix, randomSet);
+            
+            //print end statement
+            displayEndStatement(randomSet, breadwinner);
          }
-         
-         //set a random number to pick which set is to be sorted through
-         int randomSet = (int)(Math.random()*SIZE);
-         
-         //print start statement
-         displayStartStatement(coolMatrix);
-         
-         //find the biggest value of the set in the matrix
-         int breadwinner = kthBiggest(coolMatrix, randomSet);
-         
-         //print end statement
-         displayEndStatement(randomSet, breadwinner);
+         System.out.println("Testing of kthBiggest ends.");      
+      
       }else{
          //print error statement if SIZE is negative
          System.out.println("ERROR - SIZE SET NON-EXISTENT. Cannot start kthBiggest.");   
