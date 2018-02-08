@@ -8,7 +8,7 @@ import java.util.*;
 
 public class HeapMaxTest{
 
-   public static final int SIZE = 10;
+   public static final int SIZE = 3;
    //declare heap
    public static final HeapMax newHeap = new HeapMax(SIZE);
 

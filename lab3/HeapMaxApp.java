@@ -8,33 +8,57 @@ import java.util.*;
 
 public class HeapMaxApp{
    //declare the size of matrix
-   public final int SIZE = 3;
-   public final int [][] coolMatrix = new int[0][SIZE]
+   public static final int SIZE = 25;
    
-   //randomArray method
-   //What it does: returns random unsorted integer array
-    public static int[] randomArray(int num){
-   //create empty array
-      int[] createArray = new int [num];
-   //for loop to get each of the random int values
-       for(int i = 0; i < num; i++){
-      //Pick random index
-         int randomNum = (int)(Math.random()*1000);
-      //append the array
-         createArray[i] = randomNum;
+   public static final HeapMax newHeap = new HeapMax(SIZE);
+   
+   //required method: kthBiggest
+   public static int kthBiggest(int[][]matr, int k){
+      for (int i = 0; i < SIZE; i++){
+         newHeap.insert(matr[k][i]);
       }
-   //return the randomized array
-      return createArray;
+      return newHeap.getMax();
+   }
+   
+   public static void displayStartStatement(int[][]matr){
+      System.out.println("Testing of kthBiggest starts.");
+      System.out.println("The given matrix is: ");
+      
+      for (int i = 0; i < SIZE; i++){
+         for (int j = 0; j < SIZE; j++){
+            System.out.print(matr[i][j] + " ");
+         }
+         System.out.println("");
+         
+      }
+   }
+   
+   public static void displayEndStatement(int set, int max){
+      set = set+1;
+      System.out.println("The biggest element of experiment " + set + " is " + max + ".");
+      System.out.println("Testing of kthBiggest ends.");
    }
    
    //main method
    public static void main(String[]args){
       //create blank template of an array
-
+      int [][] coolMatrix = new int[SIZE][SIZE];
       //for loop to fill in matricies with random numbers
-      for (int i = 0; i > SIZE; i++){
-         coolMatrix[0][i] = randomArray(SIZE);
+      for (int i = 0; i < SIZE; i++){
+         for (int j = 0; j < SIZE; j++){
+            coolMatrix[i][j] = (int)(Math.random()*100);
+         }
       }
+      
+      int randomSet = (int)(Math.random()*SIZE);
+      
+      displayStartStatement(coolMatrix);
+      
+      int breadwinner = kthBiggest(coolMatrix, randomSet);
+      
+      displayEndStatement(randomSet, breadwinner);
+      
+      
    }
 
 }

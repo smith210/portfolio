@@ -26,16 +26,25 @@ public class HeapMax{
       data.add(element);
       int i = data.size()-1;  
       
+     //  if((i-1)/2 == 0){
+//          if (data.get(i) > data.get((i-1)/2)){
+// 
+//             data.set(i, data.get((i-1)/2));
+//             
+//             data.set((i-1)/2, element);
+//          }
+//       }
 
-      while ((i-1)/2 >= 0){
-         
-         
+
+      while ((i-1)%2 >= 0){
+ 
          if (data.get(i) > data.get((i-1)/2)){
 
             data.set(i, data.get((i-1)/2));
             
             data.set((i-1)/2, element);
          }
+         
          i = ((i-1)/2);
       }
    }
