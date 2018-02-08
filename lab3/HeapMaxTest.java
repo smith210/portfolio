@@ -8,8 +8,6 @@ import java.util.*;
 
 public class HeapMaxTest{
 
-   public static final int SIZE = 3;
-
    //insert num into heap
    public static void insert(int num, HeapMax currHeap){
       currHeap.insert(num);
@@ -26,10 +24,9 @@ public class HeapMaxTest{
    //remove max num from heap
    public static void remove(HeapMax currHeap){
       System.out.println("Remove max.");
-      currHeap.removeMaxHelper();
+      currHeap.removeMax();
       displayHeap(currHeap);
    }
-   
    
    /*Test case 1
    what it will do:
@@ -66,9 +63,10 @@ public class HeapMaxTest{
       //insert seventh number
       insert(2, heap);
    }
+   
    //Test case 2
    /*
-   what it will do: have 4 full levels (16 numbers).
+   what it will do: have at least 4 full levels (15 numbers).
    Will alternate starting with big and small values, 
    removes max at intervals of 5 numbers, leaving
    total numbers in tree of 17. Have 1 extra insert
@@ -114,13 +112,36 @@ public class HeapMaxTest{
       
       
    }
-   /*//Test case 3
-   public static void exampleThree(HeapMax heap){
    
-   }
+   //Test case 3
+   /*
+   What it will do: build 5 levels (31 numbers)
+   Build over, and remove consistently until
+   no numbers remain, then insert one number back
+   into heap.
    */
+   public static void exampleThree(HeapMax heap){
+      //insert 40 random numbers
+      for (int curr=0; curr < 40; curr++){
+         int randomNum = (int)(Math.random()*250);
+         insert(randomNum, heap);
+      }
+           
+      //remove all elements in heap
+      for(int count = 0; count < 40; count++){
+         remove(heap);
+      }
+      
+      //add a new element to the heap
+      insert(42, heap);
+          
+   }
+   
    //main method
    public static void main(String[]args){
+     
+      int SIZE = 3;
+   
       //declare empty heaps for each example
       HeapMax newHeap1 = new HeapMax(SIZE);
       HeapMax newHeap2 = new HeapMax(SIZE);
@@ -139,10 +160,10 @@ public class HeapMaxTest{
       System.out.println("Testing for Example 2 finished.");
       System.out.println("");
       //perform example 3
-      //System.out.println("Testing for Example 3 starting...");
-      //exampleThree(newHeap3);
-      //System.out.println("Testing for Example 3 finished.");
-      //System.out.println("");
+      System.out.println("Testing for Example 3 starting...");
+      exampleThree(newHeap3);
+      System.out.println("Testing for Example 3 finished.");
+      System.out.println("");
       //print out statement to let user know that the test has finished
       System.out.println("Testing of HeapMax ends.");
    }
