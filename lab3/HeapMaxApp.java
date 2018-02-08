@@ -63,6 +63,7 @@ public class HeapMaxApp{
    
    //main method
    public static void main(String[]args){
+      //make sure there's an arguement on the command line and it's an int.
       try{
          SIZE = Integer.parseInt(args[0]);
       } catch (NumberFormatException e) {
@@ -92,6 +93,7 @@ public class HeapMaxApp{
          //print end statement
          displayEndStatement(randomSet, breadwinner);
       }else{
+         //print error statement if SIZE is negative
          System.out.println("ERROR - SIZE SET NON-EXISTENT. Cannot start kthBiggest.");   
       }
       
