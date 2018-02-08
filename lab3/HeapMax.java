@@ -22,18 +22,11 @@ public class HeapMax{
       data = new ArrayList<Integer>(size);
    }
    
+   //insert(int element):
+   //adds element to the heap, and sorts it accordingly
    public void insert(int element){
       data.add(element);
       int i = data.size()-1;  
-      
-     //  if((i-1)/2 == 0){
-//          if (data.get(i) > data.get((i-1)/2)){
-// 
-//             data.set(i, data.get((i-1)/2));
-//             
-//             data.set((i-1)/2, element);
-//          }
-//       }
 
 
       while ((i-1)%2 >= 0){
@@ -49,11 +42,15 @@ public class HeapMax{
       }
    }
    
+   //getMax():
+   //returns the biggest value in the heap
    public int getMax(){
       return data.get(0);
    
    }
    
+   //removeMax():
+   //removes the max value, and returns a new max value
    public int removeMax(){
       removeMaxHelper();
       return data.get(0);
@@ -66,6 +63,10 @@ public class HeapMax{
       heapify(0);
    }
    
+   //heapify(int num):
+   //The parent looks at the children. If the eldest child
+   //is bigger than the parent, switch values in the tree.
+   //Do this until parent is bigger than eldest child.
    public void heapify(int num){
       while ((2*num)+1 < data.size()){
          int maxChildIndex = maxChild(num);
@@ -78,14 +79,21 @@ public class HeapMax{
       }
    }
    
+   //maxChild(int num):
+   //compare the two children, return the biggest.
    public int maxChild(int num){
+      //set values of children accordingly
       int cl = 2*num + 1;
       int cr = 2*num + 2;
       
+      //makes sure there is a child right
+      //if not, return child left.
       if(data.size() <= cr){
          return cl;
       }
       
+      //compare both children, and return the
+      //bigger one.
       if (data.get(cl) > data.get(cr)){
          return cl;
       }else{
@@ -93,21 +101,33 @@ public class HeapMax{
       }
    }
    
+   //display():
+   //Displays the heap, and seperates the levels with commas and numbers with spaces.
+   //Ends the heap with a period.
    public void display(){
+      //accumulator value to determine where levels end
+      int acc = 1;
+      
       for(int i = 0; i < data.size(); i++){
          if(i+1 == data.size()){
             System.out.print(data.get(i));
          }else{
          
             if (data.size() > 1){
-               System.out.print(data.get(i)+ " ");
+               System.out.print(data.get(i));
             
-               if (Math.sqrt(i+2)% 2 == 0 || i == 0){
+
+               if (i+2 == (int)Math.pow(2,acc)){
                   System.out.print(", ");
-               }      
+                  acc = acc+1;
+               }else{
+                  System.out.print(" ");
+               }     
             }
          }
+         //System.out.println(acc);
+         //System.out.println(i);
       }
-      System.out.print(".");
+      System.out.println(".");
    }
 }

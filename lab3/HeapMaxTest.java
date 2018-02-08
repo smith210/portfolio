@@ -9,26 +9,25 @@ import java.util.*;
 public class HeapMaxTest{
 
    public static final int SIZE = 3;
-   //declare heap
-   public static final HeapMax newHeap = new HeapMax(SIZE);
 
    //insert num into heap
-   public static void insert(int num){
-      newHeap.insert(num);
-      System.out.println("Insert " + num);
+   public static void insert(int num, HeapMax currHeap){
+      currHeap.insert(num);
+      System.out.println("Insert " + num + ".");
+      displayHeap(currHeap);
    }
    
    //print out the heap
-   public static void displayHeap(){
+   public static void displayHeap(HeapMax heap){
       System.out.print("Current heap is: ");
-      newHeap.display();
-      System.out.println("");
+      heap.display();
    }
    
    //remove max num from heap
-   public static void remove(){
+   public static void remove(HeapMax currHeap){
       System.out.println("Remove max.");
-      newHeap.removeMaxHelper();
+      currHeap.removeMaxHelper();
+      displayHeap(currHeap);
    }
    
    
@@ -39,64 +38,65 @@ public class HeapMaxTest{
       Max will be removed during the after the fourth and sixth
       insertion.
    */
-   public static void exampleOne(){
+   public static void exampleOne(HeapMax heap){
       //insert first number, and display heap.
-      insert(1);
-      displayHeap();
+      insert(1, heap);
       
       //insert second number
-      insert(29);
-      displayHeap();
+      insert(29, heap);
       
       //insert third number
-      insert(7);
-      displayHeap();
+      insert(7, heap);
       
       //insert fourth number
-      insert(24);
-      displayHeap();
+      insert(24, heap);
       
       //delete max, return new heap
-      remove();
-      displayHeap();
+      remove(heap);
      
       //insert fifth number
-      insert(5);
-      displayHeap();
+      insert(5, heap);
       
       //insert sixth number
-      insert(10);
-      displayHeap();
+      insert(10, heap);
       
       //delete max, return new heap
-      remove();
-      displayHeap();
+      remove(heap);;
       
       //insert seventh number
-      insert(2);
-      displayHeap();
+      insert(2, heap);
    }
    //Test case 2
-   public static void exampleTwo(){
+   public static void exampleTwo(HeapMax heap){
    
    }
    /*//Test case 3
-   public static void exampleThree(){
+   public static void exampleThree(HeapMax heap){
    
    }
    */
    //main method
    public static void main(String[]args){
-
+      //declare heap
+      HeapMax newHeap = new HeapMax(SIZE);
       //print out statement to let user know that the test is starting
       System.out.println("Testing of HeapMax starts.");
+      System.out.println("");
       //perform example 1
-      exampleOne();
-
+      System.out.println("Testing for Example 1 starting...");
+      exampleOne(newHeap);
+      System.out.println("Testing for Example 1 finished.");
+      System.out.println("");
       //perform example 2
-      //exampleTwo();
+      //System.out.println("Testing for Example 2 starting...");
+      //exampleTwo(newHeap);
+      //System.out.println("Testing for Example 2 finished.");
+      //System.out.println("");
       //perform example 3
-      //exampleThree();
+      //System.out.println("Testing for Example 3 starting...");
+      //exampleThree(newHeap);
+      //System.out.println("Testing for Example 3 finished.");
+      //System.out.println("");
       //print out statement to let user know that the test has finished
       System.out.println("Testing of HeapMax ends.");
    }

@@ -26,7 +26,11 @@ public class HeapMaxApp{
       
       for (int i = 0; i < SIZE; i++){
          for (int j = 0; j < SIZE; j++){
-            System.out.print(matr[i][j] + " ");
+            if(j+1 == SIZE){
+               System.out.print(matr[i][j]);
+            }else{
+               System.out.print(matr[i][j] + ", ");
+            }
          }
          System.out.println("");
          
