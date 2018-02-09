@@ -169,7 +169,7 @@ _File : README.md_
       
         ERROR - SIZE SET NON-EXISTENT. Cannot start kthBiggest.
       
-      If the int is positive or 0, it will pass through the tests. It starts by printing out a statement letting the user know the test has begun, then assigns random integers for each value in the matrix known as **coolMatrix**. A random number is also assigned under **int randomSet**, which ranges the span of the int that the user inputted.
+      If the int is positive or 0, it will pass through the tests. It starts by printing out a statement letting the user know the test has begun, then assigns random integers for each value in the matrix known as **coolMatrix**. A number is also assigned under **int randomSet**, which ranges the span of the int that the user inputted.
       
         **Testing of kthBiggest starts.**
         The given matrix for Test 1 is: 
@@ -211,3 +211,5 @@ _File : README.md_
       This repeats again for the second test. Once all tests are finished, the code will print out a statement letting the user know that this program has ran its course.
       
         **Testing of kthBiggest ends.**
+        
+      The difference between the two tests is that the first test **int randomSet** is pre-set to the first experiment, while the second test **int randomSet** is assigned randomly to any of the experiments. 
