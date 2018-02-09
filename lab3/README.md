@@ -9,19 +9,37 @@ _File : README.md_
   
   * public HeapMax(int size)
   
+      Constructor method for the **HeapMax** class. Creates a new ArrayList<Integer> with its size capped by **int size**.
+  
   * public void insert (int element)
+  
+      The method inserts **int element** into the heap.
   
   * public int getMax()
   
+      The method retrieves the biggest value in the heap, which resides at the starting point. If there is no values in the heap, the method returns -1.
+  
   * public int removeMax()
+  
+      The method removes the max value of the heap with the help of method **removeMaxHelper**. It then would return the new max value. If there is only one value in the heap, it removes the value without invoking method **removeMaxHelper**, and returns -1. If the heap is empty, the method doesn't invoke method **removeMaxHelper** and returns -1.
   
   * public void removeMaxHelper()
   
+      Helper method of method **removeMax**. It retrieves the value at the end of the heap, then saves it into variable **int value**. The value in the heap is then removed, and the max value in the heap is replaced with the value in **int value**. Helper method **heapify** is invoked then to sort the new heap.
+  
   * public void heapify(int num)
+  
+      Helper method of method **removeMaxHelper**. Takes type int. Starting at the top of the heap, the parent node is compared with its biggest child node (this is retrieved by helper method **maxChild**). If the child node ends up being bigger than the parent node, the two swap places. This comparison is done throughout the entire heap until there are no more child nodes to parse through.
   
   * public int maxChild(int num)
   
+      Helper method of method **heapify**. Takes type int. **int num** is the pointer value pointing at the parent node. First whats done in this method is that the pointer values of the children nodes are found based from the parent, and are saved into its respective variables (the left child pointer is saved into **int cl** and the right child pointer is saved into **int cr**). The values of the two children nodes are compared against each other, and then the bigger value is returned. If there is no right child node, the value in the left child node is returned.
+  
   * public void display()
+  
+      The method prints out all elements within the heap, seperating each of the heap's elements with a space, and seperating its levels by commas. If there is no elements within the heap, an error statement is then produced.
+      
+        ERROR - NO ELEMENTS IN HEAP.
   
   
 ### __**_HeapMaxTest.java_**__
