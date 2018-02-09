@@ -58,7 +58,7 @@ public class HeapMaxTest{
       insert(10, heap);
       
       //delete max, return new heap
-      remove(heap);;
+      remove(heap);
       
       //insert seventh number
       insert(2, heap);
