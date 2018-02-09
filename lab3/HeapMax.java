@@ -61,14 +61,17 @@ public class HeapMax{
    //removeMax():
    //removes the max value, and returns a new max value
    public int removeMax(){
-      //if trying to remove last heap in data, only remove.
+      //if no elements in heap, return -1
+      if(data.size() == 0){
+         return -1;
+      //if trying to remove last element in data, only remove.
       //return -1.
-      if(data.size() == 1){
+      }else if(data.size() == 1){
          data.remove(data.size()-1);
          return -1;
       }else{
-      removeMaxHelper();
-      return data.get(0);
+         removeMaxHelper();
+         return data.get(0);
       }
    }
    
