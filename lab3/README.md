@@ -67,12 +67,14 @@ _File : README.md_
         
         The given matrix for Test **1** is: 
         
-      Then there is a check to make sure the size inputted by the user is more than 0. Then it goes through the for loops, printing out each variable in the matrix, seperating the changes in matricies by **" "** and the changes of elements by **", "**.
+      Then there is a check to make sure the size inputted by the user is more than 0. If it is, it goes through the for loops, printing out each variable in the matrix, seperating the changes in matricies by **line change** and the changes of elements by **commas followed by spaces** until it has reached the last element.
       
         87, 99, 73, 0
         80, 58, 34, 89
         9, 48, 98, 95
         27, 3, 47, 24
+        
+      If the size inputted by the user is 0, nothing will print.
   
   * public static void displayEndStatement(int set, int max)
       
