@@ -90,10 +90,13 @@ public class HeapMaxApp{
                   coolMatrix[i][j] = (int)(Math.random()*100);
                }
             }
+            //controlled case: have randomSet equal the first set
+            int randomSet = 0;
             
-            //set a random number to pick which set is to be sorted through
-            int randomSet = (int)(Math.random()*SIZE);
-            
+            if (test == 1){
+               //set a random number to pick which set is to be sorted through
+               randomSet = (int)(Math.random()*SIZE);
+            }
             //print start statement
             displayStartStatement(coolMatrix, test);
             
