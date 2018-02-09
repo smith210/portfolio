@@ -52,6 +52,7 @@ _File : README.md_
         Current heap is: 5, 4.
   
   * public static void exampleOne(HeapMax heap)
+     
       Method takes type HeapMax. This first example is the simplest of the three, making sure the functions of the insertion and removal are performed properly.
         
       1. Insert **1** into **heap**
@@ -67,6 +68,7 @@ _File : README.md_
       All instructions of inserts and removals are printed for the user, and the heap is displayed after each step has been performed.
       
   * public static void exampleTwo(HeapMax heap)
+      
       Method takes type HeapMax. A bit more intricate than the first example. It's mainly used to determine that the display of the heap and its levels are displayed accurately.
       
       1. **Insert** 5 random numbers
