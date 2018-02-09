@@ -127,8 +127,8 @@ public class HeapMaxTest{
          insert(randomNum, heap);
       }
            
-      //remove all elements in heap
-      for(int count = 0; count < 40; count++){
+      //remove all elements in heap (plus an extra)
+      for(int count = 0; count < 41; count++){
          remove(heap);
       }
       
