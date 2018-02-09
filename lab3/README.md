@@ -28,18 +28,91 @@ _File : README.md_
 #### **METHODS**
 
   * public static void insert(int num, HeapMax currHeap)
+      
+      Method takes type int and type HeapMax. **HeapMax currHeap** will then have **int num** inserted into the heap. A statement is printed out to the user to describe that **int num** has been inserted into the heap, and then the heap is displayed to the user.
+        
+        Insert 1.
+        Current heap is: 1.
+        Insert 29.
+        Current heap is: 29, 1.
   
   * public static void displayHeap(HeapMax heap)
+      
+      Method takes type HeapMax. **HeapMax heap** is invoked in order to print out its content. The **display** function from class **HeapMax** is invoked here.
+        
+        Current heap is: 29, 1.
   
   * public static void remove(HeapMax currHeap)
+    
+      Method takes type HeapMax. The program will print a statement letting the user know it will remove the max from the heap, and invokes the **removeMax** function from the **HeapMax** class to remove it. The heap is then displayed to the user.
+      
+        Remove max.
+        Current heap is: 11, 4 5.
+        Remove max.
+        Current heap is: 5, 4.
   
   * public static void exampleOne(HeapMax heap)
-  
+      Method takes type HeapMax. This first example is the simplest of the three, making sure the functions of the insertion and removal are performed properly.
+        
+      1. Insert **1** into **heap**
+      2. Insert **29** into **heap**
+      3. Insert **7** into **heap**
+      4. Insert **24** into **heap**
+      5. Remove max value from **heap** (remove **29**)
+      6. Insert **5** into **heap**
+      7. Insert **10** into **heap**
+      8. Remove max value from **heap** (remove **24**)
+      9. Insert **2** into **heap**
+    
+      All instructions of inserts and removals are printed for the user, and the heap is displayed after each step has been performed.
+      
   * public static void exampleTwo(HeapMax heap)
+      Method takes type HeapMax. A bit more intricate than the first example. It's mainly used to determine that the display of the heap and its levels are displayed accurately.
+      
+      1. **Insert** 5 random numbers
+      2. **Remove** the max value from heap
+      3. Repeat steps 1-2 twice.
+      4. **Insert** 6 random numbers
+      5. **Remove** the max value from heap
+
+      All instructions of inserts and removals are printed for the user, and the heap is displayed after each step has been performed.      
   
   * public static void exampleThree(HeapMax heap) 
+      
+      Method takes type HeapMax. The more complex of the three examples, this example checks to make sure that it can attempt to remove values from a heap when there are no more values to remove.
+      
+      1. **Insert** 40 random numbers into the heap.
+      2. **Remove** the max values from heap **42** times.
+      3. **Insert** int 42 into the heap.
+    
+      All instructions of inserts and removals are printed for the user, and the heap is displayed after each step has been performed.
   
   * public static void main(String[] args)
+  
+      Main method of the code, and where it starts running. Main requires no arguements.
+      Three new HeapMax types will be created for each of the three examples being ran. Statements will then be ran to let the user know that the the program has started. It will respectively run through each of the example cases, which are invoked by calling their respective methods (**exampleOne**, **exampleTwo**, and **exampleThree**), printing statements to let the user know which example case is running currently. Once finished, the program will let the user know that the program has ran its course.
+      
+        Testing of HeapMax starts.
+
+        Testing for Example 1 starting...
+        ////////////////////////////////////
+             //Example 1 displays here//
+        ////////////////////////////////////
+        Testing for Example 1 finished.
+        
+        Testing for Example 2 starting...
+        ////////////////////////////////////
+             //Example 2 displays here//
+        ////////////////////////////////////
+        Testing for Example 2 finished.
+        
+        Testing for Example 3 starting...
+        ////////////////////////////////////
+             //Example 3 displays here//
+        ////////////////////////////////////
+        Testing for Example 3 finished.
+
+        Testing of HeapMax ends.
 
 ### __**_HeapMaxApp.java_**__
 #### **METHODS**
