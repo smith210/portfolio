@@ -34,48 +34,64 @@ public class BST{
   }
 
   public void insert(int target){
-      if(root == null){
-        root = new Node(target);
+      Node curr = root;
+
+      if(curr == null){
+        curr = new Node(target);
       }else{
-        while(root.left != null && root.right != null){
-          int nodeCheck = root.key;
+        while(curr.left != null && curr.right != null){
+          int nodeCheck = curr.key;
 
           if(nodeCheck == target){
-            root.key = target;
+            curr.key = target;
           }else{
             if(nodeCheck > target){
-                root = root.right;
+                curr = curr.right;
             }else{
-                root = root.left;
+                curr = curr.left;
             }
           }
         }
-        root.key = target;
+        curr.key = target;
       }
 
   }
 
   public void delete(int target){
-    Node currParent = root.parent;
+    Node curr = root;
+    Node currParent = curr.parent;
     boolean foundTarget = search(target);
-
+    //make sure the target being deleted is in the tree
     if(foundTarget){
-      while(root.left != null && root.right != null){
+      //get the node up to date
+      while(curr.left != null && curr.right != null){
         int nodeCheck = curr.key;
 
         if(nodeCheck == target){
           break;
         }else{
-          currParent = root;
+          currParent = curr;
           if(nodeCheck > target){
-              root = root.right;
+              curr = curr.right;
           }else{
-              root = root.left;
+              curr = curr.left;
           }
         }
       }
+      //case 1: if the node being deleted has no children
+      if (curr.left == null && curr.right == null){
+        root.key = null;
+      //case 2.1: if the node has only one child/one subtree -left
+      } else if (curr.left != null){
 
-      if (r)
+      //case 2.2: if the node has only one child/one subtree -right
+      } else if (curr.right != null){
+
+      //case 3: if the node has two subtrees(both left and right)
+      }else{
+
+
+      }
 
     }
 
