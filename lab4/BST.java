@@ -23,9 +23,9 @@ public class BST{
             return true;
           }else{
             if(nodeCheck > target){
-                nodeCheck = curr.right;
+                curr = curr.right;
             }else{
-                nodeCheck = curr.left;
+                curr = curr.left;
             }
           }
         }
@@ -35,10 +35,12 @@ public class BST{
 
   public void insert(int target){
       Node curr = root;
-      Node temp = new Node();
+
       if(curr == null){
-        curr = new Node(target);
+        root = new Node(target);
+        return;
       }else{
+        Node temp = curr;
         while(curr.left != null && curr.right != null){
           int nodeCheck = curr.key;
 
@@ -54,8 +56,10 @@ public class BST{
             }
           }
         }
+
         curr.key = target;
         curr.parent = temp;
+        System.out.print(curr.parent.key);
       }
 
   }
@@ -82,7 +86,7 @@ public class BST{
       }
       //case 1: if the node being deleted has no children
       if (curr.left == null && curr.right == null){
-        curr.key = null;
+        curr = null;
       //case 2.1: if the node has only one child/one subtree -left
       } else if (curr.right == null){
         //connect child to parent
@@ -114,14 +118,18 @@ public class BST{
 
   public void traverse(){
       Node curr = root;
-      System.out.println("Traverse")
+
       actuallyTraverse(curr);
   }
 
   public void actuallyTraverse(Node node){
-      actuallyTraverse(node.left);
-      System.out.print(node.key + " ");
-      actually Traverse(node.right);
+      if(node == null){
+        System.out.print("");
+      }else{
+        actuallyTraverse(node.left);
+        System.out.print(node.key + " ");
+        actuallyTraverse(node.right);
+      }
   }
 
 
