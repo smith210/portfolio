@@ -35,7 +35,7 @@ public class BST{
 
   public void insert(int target){
       Node curr = root;
-
+      Node temp = new Node();
       if(curr == null){
         curr = new Node(target);
       }else{
@@ -46,20 +46,23 @@ public class BST{
             curr.key = target;
           }else{
             if(nodeCheck > target){
+                temp = curr;
                 curr = curr.right;
             }else{
+                temp = curr;
                 curr = curr.left;
             }
           }
         }
         curr.key = target;
+        curr.parent = temp;
       }
 
   }
 
   public void delete(int target){
     Node curr = root;
-    Node currParent = curr.parent;
+
     boolean foundTarget = search(target);
     //make sure the target being deleted is in the tree
     if(foundTarget){
@@ -70,7 +73,6 @@ public class BST{
         if(nodeCheck == target){
           break;
         }else{
-          currParent = curr;
           if(nodeCheck > target){
               curr = curr.right;
           }else{
@@ -80,16 +82,29 @@ public class BST{
       }
       //case 1: if the node being deleted has no children
       if (curr.left == null && curr.right == null){
-        root.key = null;
+        curr.key = null;
       //case 2.1: if the node has only one child/one subtree -left
-      } else if (curr.left != null){
+      } else if (curr.right == null){
+        //connect child to parent
+        curr.parent.left = curr.left;
 
       //case 2.2: if the node has only one child/one subtree -right
-      } else if (curr.right != null){
+    } else if (curr.left == null){
+        //connect child to parent
+        curr.parent.right = curr.right;
 
       //case 3: if the node has two subtrees(both left and right)
       }else{
-
+        //go to the right subtree to find the smallest value
+        Node smallest = curr.right;
+        while(smallest.left != null){
+          smallest = smallest.left;
+        }
+        int smallestKey = smallest.key;
+        //delete the node at the smallest value
+        delete(smallestKey);
+        //set the smallest value equal to where curr is
+        curr.key = smallestKey;
 
       }
 
@@ -98,8 +113,15 @@ public class BST{
   }
 
   public void traverse(){
+      Node curr = root;
+      System.out.println("Traverse")
+      actuallyTraverse(curr);
+  }
 
-
+  public void actuallyTraverse(Node node){
+      actuallyTraverse(node.left);
+      System.out.print(node.key + " ");
+      actually Traverse(node.right);
   }
 
 
