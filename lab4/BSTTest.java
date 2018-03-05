@@ -36,7 +36,7 @@ public class BSTTest{
     insert(shrub, 1);
     display(shrub);
     //insert 5
-    /*insert(shrub, 5);
+    insert(shrub, 5);
     display(shrub);
     //insert 9
     insert(shrub, 9);
@@ -55,7 +55,40 @@ public class BSTTest{
     display(shrub);
     //insert 7
     insert(shrub, 7);
-    display(shrub);*/
+    display(shrub);
+
+    insert(shrub, 3);
+    display(shrub);
+    //insert 7
+    insert(shrub, 30);
+    display(shrub);
+
+    insert(shrub, 21);
+    display(shrub);
+
+    remove(shrub, 30);
+    display(shrub);
+
+    remove(shrub, 45);
+    display(shrub);
+
+    remove(shrub, 26);
+    display(shrub);
+
+    insert(shrub, 42);
+    display(shrub);
+
+    insert(shrub, 27);
+    display(shrub);
+
+    insert(shrub, 29);
+    display(shrub);
+
+    insert(shrub, 23);
+    display(shrub);
+
+    remove(shrub, 25);
+    display(shrub);
   }
 
   //Example2
@@ -70,7 +103,7 @@ public class BSTTest{
       //call exampleOne
       exampleOne();
       //call exampleTwo
-      //exampleTwo();
+      exampleTwo();
 
       System.out.println("Testing of BSTTest Finished.");
   }
