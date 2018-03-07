@@ -109,6 +109,18 @@ public class BSTApp{
     //test - try to get a tree with only one value to display a difference
     insert(shrub, 19);
     display(shrub);
+    int del = 0;
+    //add random numbers
+    for (int i = 0; i < 10; i++){
+        int value = (int) (Math.random()*100+1);
+        insert(shrub, value);
+        if (i == 5){
+          del = value;
+        }
+    }
+    remove(shrub, del);
+    display(shrub);
+
 
   }
   //main method
