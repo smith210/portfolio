@@ -53,6 +53,8 @@ public class BST{
         //if the node starts at as null, create new node and return.
         if(node == null){
           node = new Node(target);
+          //set parent value of node to the guardian
+          node.parent = guardian;
           return node;
         }
 
@@ -66,15 +68,13 @@ public class BST{
           //System.out.println("GOING RIGHT");
           //parse through the right subtree of node
           node.right = insertHelp(node.right, node, target);
-          //set parent value of node to the guardian
-          node.parent = guardian;
+
         //if target value is smaller, go through left subtree
         }else{
           //System.out.println("GOING LEFT");
           //parse through the left subtree of node
           node.left = insertHelp(node.left, node, target);
-          //set parent value of node to the guardian
-          node.parent = guardian;
+
         }
 
 
