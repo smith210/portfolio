@@ -11,17 +11,37 @@ public class BSTTest{
     System.out.println(".");
   }
 
+  //search
+  public static void search(BST tree, int num){
+    //let user know the search is going to commence
+    System.out.println("Searching for " + num + " in the BST.");
+    boolean inTree = tree.search(num);
+    //if num is in tree, print out true statement, else print false statement
+    if(inTree){
+        System.out.println("The BST does contain " + num + ".");
+    }else{
+        System.out.println("The BST does not contain " + num + ".");
+    }
+
+  }
+
   //insert
   public static void insert(BST tree, int num){
+    //let user know the insert is going to commence
     System.out.println("Inserting " + num + " into the BST.");
     tree.insert(num);
+    //display the tree
+    display(tree);
 
   }
 
   //remove
   public static void remove(BST tree, int num){
+    //let user know the delete is going to commence
     System.out.println("Deleting " + num + " from the BST.");
     tree.delete(num);
+    //display the tree
+    display(tree);
   }
 
   //Example1
@@ -29,72 +49,83 @@ public class BSTTest{
     System.out.println("-----TEST 1-----");
     //create new BST
     BST shrub = new BST();
-    //insert 19
+    //insert 19 - make sure that a value can be inserted into the tree
     insert(shrub, 19);
-    display(shrub);
-    //insert 1
+    //insert 1 - make sure that a value can be tacked on after a node
     insert(shrub, 1);
-    display(shrub);
-    //insert 5
+    //insert 5 - make sure that a value can be tacked on after two nodes
     insert(shrub, 5);
-    display(shrub);
     //insert 9
     insert(shrub, 9);
-    display(shrub);
-    //insert 25
+    //insert 25 - make sure that a value can be tacked on as .right of start
     insert(shrub, 25);
-    display(shrub);
     //insert 45
     insert(shrub, 45);
-    display(shrub);
     //insert 26
     insert(shrub, 26);
-    display(shrub);
     //insert 36
     insert(shrub, 36);
-    display(shrub);
     //insert 7
     insert(shrub, 7);
-    display(shrub);
-
+    //insert 3
     insert(shrub, 3);
-    display(shrub);
-    //insert 7
+    //insert 30
     insert(shrub, 30);
-    display(shrub);
-
+    //insert 21
     insert(shrub, 21);
-    display(shrub);
-
+    //search for 7 - test to see if search works properly
+    search(shrub, 7);
+    //remove 30 - test to see if deleting node w/ no children works
     remove(shrub, 30);
-    display(shrub);
-
+    //remove 45 - test to see if deleting node w/ one child (left) works
     remove(shrub, 45);
-    display(shrub);
-
+    //remove 26 - test to see if deleting node w/ one child(right) works
     remove(shrub, 26);
-    display(shrub);
-
+    //insert 42
     insert(shrub, 42);
-    display(shrub);
-
+    //insert 27
     insert(shrub, 27);
-    display(shrub);
-
+    //insert 29
     insert(shrub, 29);
-    display(shrub);
-
+    //insert 23
     insert(shrub, 23);
-    display(shrub);
-
+    //remove 25 - test to see if deleting node w/ two children works
     remove(shrub, 25);
-    display(shrub);
   }
 
   //Example2
   public static void exampleTwo(){
     System.out.println("-----TEST 2-----");
-
+    //create new BST
+    BST shrub = new BST();
+    //remove 125 - test to see if it's possible to remove a value from empty tree
+    remove(shrub, 125);
+    //search for 12 - test to see if it's possible to search an empty tree
+    search(shrub, 12);
+    //insert 19
+    insert(shrub, 19);
+    //insert 19 - test to see if it can add a number already in the tree
+    insert(shrub, 19);
+    //insert 1
+    insert(shrub, 1);
+    //insert 5
+    insert(shrub, 5);
+    //insert 9
+    insert(shrub, 9);
+    //insert 25
+    insert(shrub, 25);
+    //insert 5 - test to see if it can add a number already in the tree
+    insert(shrub, 5);
+    //insert 45
+    insert(shrub, 45);
+    //search for 9 (it should return true)
+    search(shrub, 9);
+    //delete 25
+    remove(shrub, 25);
+    //search for 25 (it should return false)
+    search(shrub, 25);
+    //delete 21 - test to see if it's possible to delete a value not in tree
+    remove(shrub, 21);
   }
 
   //main method
