@@ -91,6 +91,25 @@ public class BSTTest{
     insert(shrub, 23);
     //remove 25 - test to see if deleting node w/ two children works
     remove(shrub, 25);
+    //remove the rest of the numbers - add a few numbers sure
+    remove(shrub, 19);
+    remove(shrub, 1);
+    remove(shrub, 5);
+    search(shrub, 9);
+    remove(shrub, 9);
+    search(shrub, 9);
+    remove(shrub, 21);
+    remove(shrub, 27);
+    remove(shrub, 42);
+    remove(shrub, 29);
+    remove(shrub, 3);
+    remove(shrub, 36);
+    remove(shrub, 23);
+    remove(shrub, 23);
+    insert(shrub, 2);
+    remove(shrub, 7);
+    insert(shrub, 1);
+
   }
 
   //Example2
